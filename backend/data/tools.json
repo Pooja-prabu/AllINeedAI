@@ -1,0 +1,23 @@
+[
+  {
+    "tool_id": "langchain",
+    "name": "LangChain",
+    "category": "Agent Framework",
+    "url": "https://www.langchain.com",
+    "description": "Framework for building LLM-powered agents and workflows."
+  },
+  {
+    "tool_id": "openai",
+    "name": "OpenAI",
+    "category": "LLM Provider",
+    "url": "https://openai.com",
+    "description": "Provides GPT models for reasoning and generation."
+  },
+  {
+    "tool_id": "huggingface",
+    "name": "Hugging Face",
+    "category": "Model Hub",
+    "url": "https://huggingface.co",
+    "description": "Open-source ML models and datasets."
+  }
+]

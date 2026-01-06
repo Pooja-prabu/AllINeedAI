@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from routes.recommend import router as recommend_router
+from routes.tools import router as tools_router   # ✅ ADD THIS
 
 ALLOWED = os.getenv('ALLOWED_ORIGINS','http://localhost:3000').split(',')
 
@@ -23,4 +24,5 @@ app.add_middleware(
 def health():
     return {'status':'ok'}
 
-app.include_router(recommend_router)
+app.include_router(recommend_router)              # existing
+app.include_router(tools_router, prefix='/tools') # ✅ ADD THIS
