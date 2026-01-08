@@ -1,12 +1,16 @@
 import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except Exception:
+    # python-dotenv not installed or .env unavailable; continue without it
+    pass
 
-load_dotenv()
+from backend.routes.recommend import router as recommend_router
+from backend.routes.tools import router as tools_router
 
-from routes.recommend import router as recommend_router
-from routes.tools import router as tools_router   # ✅ ADD THIS
 
 ALLOWED = os.getenv('ALLOWED_ORIGINS','http://localhost:3000').split(',')
 
